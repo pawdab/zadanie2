@@ -1,11 +1,11 @@
-small = 3
-big = 5
-goal = 8
+small = 5
+big = 6
+goal = 18
+
+import math
 
 def build_bridge(small, big, goal):
-    for i in range (1, round(goal/small)):
-        print(goal/big)
-        print (goal%big)
+    for i in range (1, math.ceil(goal/small)):
         if goal % big == 0 or goal % small ==0:
             return True
         else:
