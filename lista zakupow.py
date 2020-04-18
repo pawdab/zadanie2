@@ -32,3 +32,4 @@ for sklep, produkt in zakupy.items():
   wizyta = wizyta + 1
 
 print (f"Total zakupów: {count}")
+print(f"pozdrowienia")
