@@ -52,31 +52,31 @@ for sales in sales2016:
         sales2016[i] = int(sales2016[i].replace(",",""))
     i = i +1
 
-carsx = {}
+cars = {}
 car = {}
 
 i = 0
 for model in models:
     car[model[(model.find(" ")+3):(len(model))]] = {"sales": {'2016': sales2016[i], '2017': sales2017[i], '2018': sales2018[i]}}
-    if model[0:(model.find(" "))] in carsx.keys():
-        carsx[model[0:(model.find(" "))]].update( {model[(model.find(" ")+3):(len(model))]:car[model[(model.find(" ")+3):(len(model))]]})
+    if model[0:(model.find(" "))] in cars.keys():
+        cars[model[0:(model.find(" "))]].update( {model[(model.find(" ")+3):(len(model))]:car[model[(model.find(" ")+3):(len(model))]]})
     else:
-        carsx[model[0:(model.find(" "))]] = {model[(model.find(" ")+3):(len(model))]:car[model[(model.find(" ")+3):(len(model))]]}
+        cars[model[0:(model.find(" "))]] = {model[(model.find(" ")+3):(len(model))]:car[model[(model.find(" ")+3):(len(model))]]}
     i = i + 1
 
-#carsx = {}
-#car = {}
+carsx = {}
+car = {}
 
-#i = 0
-#for model in models:
-#    carsx[model[0:(model.find(" "))]] = []
-#    i = i + 1
+i = 0
+for model in models:
+    carsx[model[0:(model.find(" "))]] = []
+    i = i + 1
 
-#i = 0
-#for model in models:
-#    car[model[(model.find(" ")+3):(len(model))]] = [sales2018[i], sales2017[i], sales2016[i]]
-#    carsx[model[0:(model.find(" "))]].append( {model[(model.find(" ")+3):(len(model))]:car[model[(model.find(" ")+3):(len(model))]]})
-#    i = i + 1
+i = 0
+for model in models:
+    car[model[(model.find(" ")+3):(len(model))]] = [sales2018[i], sales2017[i], sales2016[i]]
+    carsx[model[0:(model.find(" "))]].append( {model[(model.find(" ")+3):(len(model))]:car[model[(model.find(" ")+3):(len(model))]]})
+    i = i + 1
 
 
 answer1 = models[sales2017.index(max(sales2017))]
